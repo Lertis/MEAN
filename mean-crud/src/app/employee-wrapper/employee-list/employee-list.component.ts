@@ -1,10 +1,15 @@
 import { Component, OnInit } from '@angular/core';
+import { Router  } from '@angular/router';
+import { Store } from '@ngrx/store';
+
 import { Observable, EmptyError } from 'rxjs';
 import { map } from 'rxjs/operators';
+
 import { IEmployee } from '../../shared/model/employee';
 import { EmployeeService } from '../../shared/employee.service';
-import { Router  } from '@angular/router';
 
+import { ApplicationState } from '../../ngrx/states/application.state';
+import { SelectEmployeeToUpdate } from '../../ngrx/actions/employee.actions';
 
 
 @Component({
@@ -16,7 +21,7 @@ export class EmployeeListComponent implements OnInit {
 
   employees$: Observable<IEmployee>;
 
-  constructor(private employeeServce: EmployeeService, private router: Router) {
+  constructor(private employeeServce: EmployeeService, private router: Router, private store: Store<ApplicationState>) {
     this.employees$ = this.employeeServce.getEmployeeList().pipe(
       map((employees) => {
         return employees;
@@ -29,9 +34,8 @@ export class EmployeeListComponent implements OnInit {
   }
 
   update(employee: IEmployee) {
-    this.router.navigate(['update'], { queryParams: {
-      updateEmp: employee
-    }});
+    this.store.dispatch(new SelectEmployeeToUpdate(employee));
+    this.router.navigate(['update']);
   }
 
   delete(employee: IEmployee) {

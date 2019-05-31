@@ -4,6 +4,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AngularMaterialModule } from './angular.material.module';
 
@@ -15,6 +18,7 @@ import { UpdateEmployeeComponent } from './update-employee/update-employee.compo
 import { EmployeeListComponent } from './employee-wrapper/employee-list/employee-list.component';
 import { EmployeeComponent } from './employee-wrapper/employee/employee.component';
 import { EmployeeWrapperComponent } from './employee-wrapper/employee-wrapper.component';
+import { allReducers } from './ngrx/reducers/employee.reducer';
 
 @NgModule({
   declarations: [
@@ -31,7 +35,11 @@ import { EmployeeWrapperComponent } from './employee-wrapper/employee-wrapper.co
     ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule,
-    AngularMaterialModule
+    AngularMaterialModule,
+    StoreModule.forRoot(allReducers),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25,
+    }),
   ],
   providers: [EmployeeService],
   bootstrap: [AppComponent]
