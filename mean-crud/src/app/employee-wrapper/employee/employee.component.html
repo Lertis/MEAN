@@ -1,0 +1,31 @@
+<form [formGroup]="employeeForm" class="employee-form" novalidate>
+  
+  <div class="mat-dialog-content" mat-dialog-content>
+      <mat-form-field class="md-block">
+          <input [formControl]="employeeForm.controls['name']" [(ngModel)]="employee.name" matInput name='name'
+              mat-autofocus placeholder="Employee Name"/>
+        </mat-form-field>
+
+        <mat-form-field class="md-block">
+            <input [formControl]="employeeForm.controls['position']" [(ngModel)]="employee.position" matInput name='position'
+                mat-autofocus placeholder="Employee Position"/>
+        </mat-form-field>
+
+        <mat-form-field class="md-block">
+          <input [formControl]="employeeForm.controls['office']" [(ngModel)]="employee.office" matInput name='office'
+              mat-autofocus placeholder="Employee Office"/>
+        </mat-form-field>
+
+        <mat-form-field class="md-block">
+          <input [formControl]="employeeForm.controls['salary']" [(ngModel)]="employee.salary" matInput name='salary'
+              mat-autofocus placeholder="Employee Salary"/>
+        </mat-form-field>
+      
+</div>
+ 
+  <mat-dialog-actions layout="row" class="employee-btn">
+      <button [disabled]="employeeForm.invalid" mat-button class="md-raised md-primary" (click)="submit()">Submit</button>
+  </mat-dialog-actions>
+</form>
+
+<router-outlet name="name"></router-outlet>

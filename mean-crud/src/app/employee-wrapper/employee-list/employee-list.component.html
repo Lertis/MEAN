@@ -1,0 +1,18 @@
+<mat-list *ngFor="let emp of employees$ | async" >
+    <mat-card>
+        <mat-card-header>
+          <mat-card-title>Name: {{emp.name}}</mat-card-title>
+          <mat-card-subtitle>Position: {{emp.position}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p>
+              <mat-list-item>Office: {{emp.office}}</mat-list-item>
+              <mat-list-item>Salary: {{emp.salary}}</mat-list-item>
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-button (click)="update(emp)">Update</button>
+            <button mat-button (click)="delete(emp)">Delete</button>
+          </mat-card-actions>
+      </mat-card>
+</mat-list>
