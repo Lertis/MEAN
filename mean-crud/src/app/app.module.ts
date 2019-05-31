@@ -21,6 +21,7 @@ import { EmployeeComponent } from './employee-wrapper/employee/employee.componen
 import { EmployeeWrapperComponent } from './employee-wrapper/employee-wrapper.component';
 import { allReducers } from './ngrx/reducers/employee.reducer';
 import { HttpInterceptorService } from './guards/interceptors/http-interceptor.service';
+import { UpdateGuardService } from './guards/route/update-guard.service';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { HttpInterceptorService } from './guards/interceptors/http-interceptor.s
     provide: HTTP_INTERCEPTORS,
     useClass: HttpInterceptorService,
     multi: true
-  }],
+  },
+  UpdateGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
