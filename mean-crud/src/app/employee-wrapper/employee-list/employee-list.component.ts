@@ -38,8 +38,4 @@ export class EmployeeListComponent implements OnInit {
     this.router.navigate(['update']);
   }
 
-  delete(employee: IEmployee) {
-    console.log(employee)
-  }
-
 }

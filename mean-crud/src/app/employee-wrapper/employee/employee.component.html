@@ -1,5 +1,7 @@
 <form [formGroup]="employeeForm" class="employee-form" novalidate>
   
+    <h2>Add a new Employee</h2>
+
   <div class="mat-dialog-content" mat-dialog-content>
       <mat-form-field class="md-block">
           <input [formControl]="employeeForm.controls['name']" [(ngModel)]="employee.name" matInput name='name'
@@ -24,7 +26,7 @@
 </div>
  
   <mat-dialog-actions layout="row" class="employee-btn">
-      <button [disabled]="employeeForm.invalid" mat-button class="md-raised md-primary" (click)="submit()">Submit</button>
+      <button [disabled]="employeeForm.invalid" mat-button class="md-raised md-primary" (click)="submit()">Add</button>
   </mat-dialog-actions>
 </form>
 
