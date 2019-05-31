@@ -30,10 +30,6 @@ export class EmployeeComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.employee.name = '1';
-    this.employee.position = '1';
-    this.employee.office = '1';
-    this.employee.salary = 1;
   }
 
   submit() {
