@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
@@ -19,6 +20,7 @@ import { EmployeeListComponent } from './employee-wrapper/employee-list/employee
 import { EmployeeComponent } from './employee-wrapper/employee/employee.component';
 import { EmployeeWrapperComponent } from './employee-wrapper/employee-wrapper.component';
 import { allReducers } from './ngrx/reducers/employee.reducer';
+import { HttpInterceptorService } from './guards/interceptors/http-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,7 @@ import { allReducers } from './ngrx/reducers/employee.reducer';
     EmployeeComponent,
     EmployeeListComponent,
     NotFoundComponent,
-    EmployeeWrapperComponent 
+    EmployeeWrapperComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +43,11 @@ import { allReducers } from './ngrx/reducers/employee.reducer';
       maxAge: 25,
     }),
   ],
-  providers: [EmployeeService],
+  providers: [EmployeeService, {
+    provide: HTTP_INTERCEPTORS,
+    useClass: HttpInterceptorService,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

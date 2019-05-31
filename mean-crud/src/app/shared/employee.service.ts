@@ -9,27 +9,21 @@ import { Observable } from 'rxjs';
 })
 export class EmployeeService {
 
-  private headers = new HttpHeaders({
-    'Content-Type': 'application/json',
-    'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Methods': 'GET, POST, DELETE, PUT'
-  });
-    
   constructor(private http: HttpClient) { }
 
   getEmployeeList(): Observable<IEmployee> {
-    return this.http.get<IEmployee>(env.environment.BASE_URL, { headers: this.headers})
+    return this.http.get<IEmployee>(env.environment.BASE_URL)
   }
 
   addEmployee(employee: IEmployee) {
-    return this.http.post(env.environment.BASE_URL, employee, { headers: this.headers});
+    return this.http.post(env.environment.BASE_URL, employee);
   }
 
   updateEmployee(employee: IEmployee) {
-    return this.http.put(env.environment.BASE_URL + `/${employee._id}`, employee, { headers: this.headers});
+    return this.http.put(env.environment.BASE_URL + `/${employee._id}`, employee);
   }
 
   deleteEmployee(employee: IEmployee) {
-    return this.http.delete(env.environment.BASE_URL + `/${employee._id}`, { headers: this.headers});
+    return this.http.delete(env.environment.BASE_URL + `/${employee._id}`);
   }
 }
