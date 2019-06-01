@@ -5,6 +5,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
+import { ScrollDispatchModule } from '@angular/cdk/scrolling';
+
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
@@ -43,6 +45,7 @@ import { UpdateGuardService } from './guards/route/update-guard.service';
     StoreDevtoolsModule.instrument({
       maxAge: 25,
     }),
+    ScrollDispatchModule
   ],
   providers: [EmployeeService, {
     provide: HTTP_INTERCEPTORS,

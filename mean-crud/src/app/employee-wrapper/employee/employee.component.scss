@@ -1,30 +1,8 @@
-.employee_frm {
-    background: #1f89e5;
-    margin: 0;
-    padding: 10px;
-    color: #fff;
-    font-weight: normal;
-  }
-  
-  .employee-form mat-form-field.mat-form-field {
-    width: 85%;
-  }
-  
-  .employee-btn {
-    text-align: center;
-    display: block;
-  }
-/*   
-  .vcategory-btn button {
-    background: #1f89e5;
-    color: #fff;
-  } 
-  
-  .vcategory button[disabled] {
-    background: #badae5;
-    color: #fff;
-  }*/
+form {
+  display: table-caption;
+}
 
-  @media screen and (max-width:767px){
-    .mat-dialog-content{display:inline-block;}
-  }
+.employee-btn {
+  text-align: center;
+  display: block;
+}

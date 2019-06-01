@@ -1,2 +1,40 @@
 /* You can add global styles to this file, and also import other style files */
 @import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+@font-face {
+    font-family: Sofia;
+    src: url('./assets/sofiapro.otf') format("opentype");
+}
+
+$pastel-blue: #cedde2;
+
+.center-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+h2, mat-card-title, input, mat-card-title, mat-card-subtitle, mat-list-item, button {
+    font-family: 'Sofia', 'arial', sans-serif !important;
+}
+
+::-webkit-scrollbar {
+    width: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: $pastel-blue; 
+    border-radius: .5em;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: $pastel-blue; 
+}

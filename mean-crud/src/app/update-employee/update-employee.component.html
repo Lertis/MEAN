@@ -1,61 +1,31 @@
-<mat-card>
-  <mat-card-header>
-    <mat-card-title>
-      <mat-form-field class="example-full-width">
-        <input matInput placeholder="Name" [(ngModel)]="employeeToUpdate.name">
-      </mat-form-field>
-    </mat-card-title>
-    <mat-card-subtitle>
-      <mat-form-field class="example-full-width">
-        <input matInput placeholder="Position" [(ngModel)]="employeeToUpdate.position">
-      </mat-form-field>
-    </mat-card-subtitle>
-  </mat-card-header>
-  <mat-card-content>
-    <div style="display: table-caption;">
-      <mat-form-field class="example-full-width">
-        <input matInput placeholder="Office" [(ngModel)]="employeeToUpdate.office">
-      </mat-form-field>
-      <mat-form-field class="example-full-width">
-        <input matInput placeholder="Salary" [(ngModel)]="employeeToUpdate.salary">
-      </mat-form-field>
-    </div>
-  </mat-card-content>
-  <mat-card-actions>
-    <button mat-button (click)="update()">Update</button>
-    <button mat-button (click)="delete()">Delete</button>
-    <button mat-button (click)="cancel()">Cancel</button>
-  </mat-card-actions>
-</mat-card>
-<!-- 
-<form [formGroup]="employeeForm" class="employee-form" novalidate>
-  
-    <h2>Add a new Employee</h2>
-
-  <div class="mat-dialog-content" mat-dialog-content>
-      <mat-form-field class="md-block">
-          <input [formControl]="employeeForm.controls['name']" [(ngModel)]="employee.name" matInput name='name'
-              mat-autofocus placeholder="Employee Name"/>
+<div class="center-content">
+  <mat-card class="update-employee">
+    <mat-card-header>
+      <mat-card-title>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Name" [(ngModel)]="employeeToUpdate.name">
         </mat-form-field>
-
-        <mat-form-field class="md-block">
-            <input [formControl]="employeeForm.controls['position']" [(ngModel)]="employee.position" matInput name='position'
-                mat-autofocus placeholder="Employee Position"/>
+      </mat-card-title>
+      <mat-card-subtitle>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Position" [(ngModel)]="employeeToUpdate.position">
         </mat-form-field>
-
-        <mat-form-field class="md-block">
-          <input [formControl]="employeeForm.controls['office']" [(ngModel)]="employee.office" matInput name='office'
-              mat-autofocus placeholder="Employee Office"/>
+      </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <div style="display: table-caption;">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Office" [(ngModel)]="employeeToUpdate.office">
         </mat-form-field>
-
-        <mat-form-field class="md-block">
-          <input [formControl]="employeeForm.controls['salary']" [(ngModel)]="employee.salary" matInput name='salary'
-              mat-autofocus placeholder="Employee Salary"/>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Salary" [(ngModel)]="employeeToUpdate.salary">
         </mat-form-field>
-      
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button (click)="update()">Update</button>
+      <button mat-button (click)="delete()">Delete</button>
+      <button mat-button (click)="cancel()">Cancel</button>
+    </mat-card-actions>
+  </mat-card>
 </div>
- 
-  <mat-dialog-actions layout="row" class="employee-btn">
-      <button [disabled]="employeeForm.invalid" mat-button class="md-raised md-primary" (click)="submit()">Add</button>
-  </mat-dialog-actions>
-</form> -->
