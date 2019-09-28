@@ -32,3 +32,12 @@ When MongoDB Compass Community has been installed create database <NameOfDB> and
 - Go to the NodeJS folder and run command `nodemon index.js`.
 
 - Go to the Angular application folder and run command `npm run start`.
+
+# Issues
+
+MongoDB not running on the provided host and port
+
+- Go to the folder where you installed MongoDB. As for me it was `MongoDB\Server\4.0\bin ` and run `mongod`
+- Press `❖ + R ` and type `services.msc`
+- Find MongoDB Server and run it
+- Launch MongoDB Compass
